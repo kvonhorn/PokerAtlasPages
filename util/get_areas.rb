@@ -29,7 +29,7 @@ areas_page.get  # Load the /areas page
 
 # Scrape the data and print out as JSON
 areas_out = areas_page.get_areas
-puts JSON.generate(areas_out)
+puts JSON.pretty_generate(areas_out)
 
 
 @driver.quit
