@@ -7,6 +7,8 @@ module LiveInfoPanel
   @@cash_game_row = 'tr.live-cash-game'
   @@last_updated = 'td.last-update'
   
+  # Generates a dict containing the number of tables running and length of
+  # wait list keyed by game. e.g. { '1/2': { 'running': 2, 'wait_list': 1 } }
   def get_live_info
     live_info_out = {}
     

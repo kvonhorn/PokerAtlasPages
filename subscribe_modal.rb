@@ -1,6 +1,10 @@
 # Occasionally, a modal will appear asking the user to enter their email.
 # This mixin will allow a user to detect the dialog and close it.
 
+# 2017-08-05: An ad was observed instead of the email subscribe modal. It
+# appears to have the same close_button CSS as this subscribe modal, and will be
+# closed by the close_subscribe_modal_if_visible method.
+
 
 module SubscribeModal
 
