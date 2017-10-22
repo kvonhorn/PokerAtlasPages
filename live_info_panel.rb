@@ -4,6 +4,7 @@
 module LiveInfoPanel
   
   @@live_info_panel = '.live-info-panel'
+  @@live_cash_game_panel = '.live-cash-game-panel'
   @@cash_game_row = 'tr.live-cash-game'
   @@last_updated = 'td.last-update'
   
@@ -12,7 +13,7 @@ module LiveInfoPanel
   def get_live_info
     live_info_out = {}
     
-    live_infos = @driver.find_elements(:css, @@live_info_panel)
+    live_infos = @driver.find_elements(:css, @@live_cash_game_panel)
     return nil if live_infos.length == 0
     
     # Get cash game info
