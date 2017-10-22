@@ -1,9 +1,9 @@
 # Occasionally, a modal will appear asking the user to enter their email.
 # This mixin will allow a user to detect the dialog and close it.
 
-# 2017-08-05: An ad was observed instead of the email subscribe modal. It
-# appears to have the same close_button CSS as this subscribe modal, and will be
-# closed by the close_subscribe_modal_if_visible method.
+# 2017-10-22: An ad was observed instead of the email subscribe modal. This
+# mixin will now close all visible "close modal" buttons that are displayed,
+# not just the email subscribe modal.
 
 
 module SubscribeModal
@@ -18,6 +18,8 @@ module SubscribeModal
   
   def close_subscribe_modal_if_visible
     close_buttons = @driver.find_elements(:css, @@close_button)
-    close_buttons[0].click if close_buttons.length > 0 and close_buttons[0].displayed?
+    close_buttons.each do |close_button|
+      close_button.click if close_button.displayed?
+    end
   end
 end
