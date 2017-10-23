@@ -29,7 +29,8 @@ class PokerRoomPage < PokerAtlasPage
   # Mix in various modules depending on which panels are displayed
   def handle_mixins
     self.extend LiveInfoPanel if LiveInfoPanel.displayed?(@driver) and not self.is_a? LiveInfoPanel
-    self.remove_module LiveInfoPanel if not LiveInfoPanel.displayed?(@driver) and self.is_a? LiveInfoPanel
+    # TODO: Add a remove_module methods to remove methods added by module
+    #self.remove_module LiveInfoPanel if not LiveInfoPanel.displayed?(@driver) and self.is_a? LiveInfoPanel
     # TODO: Update to support Cash Games Offered panel under Cash Games tab
   end
   
